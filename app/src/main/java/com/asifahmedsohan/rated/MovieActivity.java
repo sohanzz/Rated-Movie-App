@@ -12,10 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,8 +57,8 @@ public class MovieActivity extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -94,10 +91,11 @@ public class MovieActivity extends AppCompatActivity {
                 movieRating.setRating(movie.getRating() / 2);
                 getGenres(movie);
                 movieReleaseDate.setText(movie.getReleaseDate());
-                Glide.with(MovieActivity.this)
+                Picasso.get()
                         .load(IMAGE_BASE_URL + movie.getBackdrop())
-                        .apply(RequestOptions.placeholderOf(R.color.colorPrimary))
+                        .placeholder(R.color.colorPrimary)
                         .into(movieBackdrop);
+
                 getTrailers(movie);
                 getReviews(movie);
             }
@@ -146,9 +144,9 @@ public class MovieActivity extends AppCompatActivity {
                         }
                     });
                     if (!isFinishing()) {
-                        Glide.with(MovieActivity.this)
+                        Picasso.get()
                                 .load(String.format(YOUTUBE_THUMBNAIL_URL, trailer.getKey()))
-                                .apply(RequestOptions.placeholderOf(R.color.colorPrimary).centerCrop())
+                                .placeholder(R.color.colorPrimary)
                                 .into(thumbnail);
                     }
                     movieTrailers.addView(parent);

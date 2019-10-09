@@ -3,6 +3,7 @@ package com.asifahmedsohan.rated;
 
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,10 +85,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             title.setText(movie.getTitle());
             rating.setText(String.valueOf(movie.getRating()));
             genres.setText(getGenres(movie.getGenreIds()));
-            Glide.with(itemView)
+
+            Picasso.get()
                     .load(IMAGE_BASE_URL + movie.getPosterPath())
-                    .apply(RequestOptions.placeholderOf(R.color.colorPrimary))
+                    .placeholder(R.color.colorPrimary)
                     .into(poster);
+            Log.d("posterLoading", IMAGE_BASE_URL + movie.getPosterPath());
         }
 
         private String getGenres(List<Integer> genreIds) {
