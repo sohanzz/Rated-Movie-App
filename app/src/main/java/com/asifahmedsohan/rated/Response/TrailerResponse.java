@@ -1,6 +1,7 @@
-package com.asifahmedsohan.rated;
+package com.asifahmedsohan.rated.Response;
 
 
+import com.asifahmedsohan.rated.Model.Trailer;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

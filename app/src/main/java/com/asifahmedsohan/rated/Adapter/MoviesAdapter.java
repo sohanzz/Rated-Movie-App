@@ -1,4 +1,4 @@
-package com.asifahmedsohan.rated;
+package com.asifahmedsohan.rated.Adapter;
 
 
 
@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asifahmedsohan.rated.Model.Genre;
+import com.asifahmedsohan.rated.Model.Movie;
+import com.asifahmedsohan.rated.Callback.OnMoviesClickCallback;
+import com.asifahmedsohan.rated.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.asifahmedsohan.rated;
+package com.asifahmedsohan.rated.Model;
 
 
 import com.google.gson.annotations.Expose;

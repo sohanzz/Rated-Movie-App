@@ -8,9 +8,15 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.asifahmedsohan.rated.Adapter.MoviesAdapter;
+import com.asifahmedsohan.rated.Callback.OnGetGenresCallback;
+import com.asifahmedsohan.rated.Callback.OnGetMoviesCallback;
+import com.asifahmedsohan.rated.Callback.OnMoviesClickCallback;
+import com.asifahmedsohan.rated.Model.Genre;
+import com.asifahmedsohan.rated.Model.Movie;
 
 import java.util.List;
 

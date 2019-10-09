@@ -12,6 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.asifahmedsohan.rated.Callback.OnGetGenresCallback;
+import com.asifahmedsohan.rated.Callback.OnGetMovieCallback;
+import com.asifahmedsohan.rated.Callback.OnGetReviewsCallback;
+import com.asifahmedsohan.rated.Callback.OnGetTrailersCallback;
+import com.asifahmedsohan.rated.Model.Genre;
+import com.asifahmedsohan.rated.Model.Movie;
+import com.asifahmedsohan.rated.Model.Review;
+import com.asifahmedsohan.rated.Model.Trailer;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

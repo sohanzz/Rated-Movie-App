@@ -1,5 +1,7 @@
-package com.asifahmedsohan.rated;
+package com.asifahmedsohan.rated.Callback;
 
+
+import com.asifahmedsohan.rated.Model.Genre;
 
 import java.util.List;
 

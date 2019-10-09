@@ -1,6 +1,12 @@
 package com.asifahmedsohan.rated;
 
 
+import com.asifahmedsohan.rated.Model.Movie;
+import com.asifahmedsohan.rated.Response.GenresResponse;
+import com.asifahmedsohan.rated.Response.MoviesResponse;
+import com.asifahmedsohan.rated.Response.ReviewResponse;
+import com.asifahmedsohan.rated.Response.TrailerResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

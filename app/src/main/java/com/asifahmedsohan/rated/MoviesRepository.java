@@ -1,6 +1,17 @@
 package com.asifahmedsohan.rated;
 
 
+import com.asifahmedsohan.rated.Callback.OnGetGenresCallback;
+import com.asifahmedsohan.rated.Callback.OnGetMovieCallback;
+import com.asifahmedsohan.rated.Callback.OnGetMoviesCallback;
+import com.asifahmedsohan.rated.Callback.OnGetReviewsCallback;
+import com.asifahmedsohan.rated.Callback.OnGetTrailersCallback;
+import com.asifahmedsohan.rated.Model.Movie;
+import com.asifahmedsohan.rated.Response.GenresResponse;
+import com.asifahmedsohan.rated.Response.MoviesResponse;
+import com.asifahmedsohan.rated.Response.ReviewResponse;
+import com.asifahmedsohan.rated.Response.TrailerResponse;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
