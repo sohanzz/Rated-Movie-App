@@ -90,11 +90,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             rating.setText(String.valueOf(movie.getRating()));
             genres.setText(getGenres(movie.getGenreIds()));
 
+            String imageURL = IMAGE_BASE_URL + movie.getPosterPath();
+            imageURL = imageURL.replace("http", "https");
+            Log.d("PosterURL", imageURL);
+
             Picasso.get()
-                    .load(IMAGE_BASE_URL + movie.getPosterPath())
+                    .load(imageURL)
+                    .fit()
                     .placeholder(R.color.colorPrimary)
                     .into(poster);
-            Log.d("posterLoading", IMAGE_BASE_URL + movie.getPosterPath());
         }
 
         private String getGenres(List<Integer> genreIds) {

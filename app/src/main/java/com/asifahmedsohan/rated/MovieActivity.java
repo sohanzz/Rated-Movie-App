@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -99,9 +100,14 @@ public class MovieActivity extends AppCompatActivity {
                 movieRating.setVisibility(View.VISIBLE);
                 movieRating.setRating(movie.getRating() / 2);
                 getGenres(movie);
+
+                String imageURL = IMAGE_BASE_URL + movie.getBackdrop();
+                imageURL = imageURL.replace("http", "https");
+                Log.d("PosterURL", imageURL);
+
                 movieReleaseDate.setText(movie.getReleaseDate());
                 Picasso.get()
-                        .load(IMAGE_BASE_URL + movie.getBackdrop())
+                        .load(imageURL)
                         .placeholder(R.color.colorPrimary)
                         .into(movieBackdrop);
 
@@ -153,8 +159,13 @@ public class MovieActivity extends AppCompatActivity {
                         }
                     });
                     if (!isFinishing()) {
+
+                        String imageURL = String.format(YOUTUBE_THUMBNAIL_URL, trailer.getKey());
+                        imageURL = imageURL.replace("http", "https");
+                        Log.d("PosterURL", imageURL);
+
                         Picasso.get()
-                                .load(String.format(YOUTUBE_THUMBNAIL_URL, trailer.getKey()))
+                                .load(imageURL)
                                 .placeholder(R.color.colorPrimary)
                                 .into(thumbnail);
                     }
